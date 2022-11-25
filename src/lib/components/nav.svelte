@@ -8,11 +8,14 @@
 <svelte:window bind:innerWidth={windowWidth}/>
 
 <nav class="flex justify-between items-center bg-transparent px-5 py-4">
-    <div>
+    <div class="flex justify-start items-center">
         <a href="/" class="flex justify-start items-center btn btn-ghost normal-case text-lg">
-            <img src="/assets/bl-logos/logo-white.png" alt="Bitlime logo" class="h-7 mr-1" />
+            <img src="/assets/bl-logos/logo-white.png" alt="Bitlime logo" class="h-7 w-7 mr-1"/>
             <div class="font-normal text-xl">BitLime<span class="text-emerald-500"></span></div>
         </a>
+        <span class="border-l pl-3 ml-3 border-zinc-600 font-medium text-zinc-600 hover:text-emerald-600 cursor-default">
+          COMING EARLY 2023
+        </span>
     </div>
     <div class="flex justify-end items-center gap-5">
       <ul class="flex justify-end items-center gap-5">

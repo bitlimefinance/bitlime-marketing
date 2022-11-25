@@ -8,7 +8,7 @@
 	let navHeight = 68;
 </script>
 
-<div id="global-container" class="min-h-screen min-w-full bg-zinc-900">
+<div id="global-container" class="min-h-screen min-w-full bg-black">
 	{#if $showLoading}
 		<FullScreenContainer zIndex='1000' noBg>
 			<div class="flex flex-col space-y-4 p-0">
