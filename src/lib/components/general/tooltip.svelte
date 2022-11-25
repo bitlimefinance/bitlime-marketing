@@ -12,11 +12,11 @@
 
 	function mouseOver(event) {
 		isHovered = true;
-		x = invertX ? event.pageX - 150 : event.pageX + 5;
+		x = invertX ? event.pageX - 100 : event.pageX + 5;
 		y = invertY ? event.pageY - 60 : event.pageY + 5;
 	}
 	function mouseMove(event) {
-		x = invertX ? event.pageX - 150 : event.pageX + 5;
+		x = invertX ? event.pageX - 100 : event.pageX + 5;
 		y = invertY ? event.pageY - 60 : event.pageY + 5;
 	}
 	function mouseLeave() {

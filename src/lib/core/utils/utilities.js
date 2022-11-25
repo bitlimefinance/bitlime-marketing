@@ -1,4 +1,4 @@
-import { _messages } from "../../globals";
+// import { _messages } from "../../globals";
 // import { recordData } from "./analytics";
 
 export function sluggify(text, lowercase=true) {

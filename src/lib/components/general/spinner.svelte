@@ -1,8 +1,5 @@
 
 <script lang="ts">
-	import { _themes } from "$lib/globals";
-	import { theme } from "$lib/stores/ui-theming";
-
     export let color: string = 'green';
     export let size: string = '20';
     export let additionalClassList: string = '';
