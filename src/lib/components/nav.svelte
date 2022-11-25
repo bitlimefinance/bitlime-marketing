@@ -11,7 +11,9 @@
     <div class="flex justify-start items-center">
         <a href="/" class="flex justify-start items-center btn btn-ghost normal-case text-lg">
             <img src="/assets/bl-logos/logo-white.png" alt="Bitlime logo" class="h-7 w-7 mr-1"/>
-            <div class="font-normal text-xl">BitLime<span class="text-emerald-500"></span></div>
+            {#if windowWidth>800}
+              <div class="font-normal text-xl">BitLime</div>
+            {/if}
         </a>
         <span class="border-l pl-3 ml-3 border-zinc-600 font-medium text-zinc-600 hover:text-emerald-600 cursor-default">
           COMING EARLY 2023
@@ -19,7 +21,7 @@
     </div>
     <div class="flex justify-end items-center gap-5">
       <ul class="flex justify-end items-center gap-5">
-        {#if windowWidth>500}
+        {#if windowWidth>600}
         <li>
           <a href="/" disabled class="cursor-default"><span class="text-zinc-300 opacity-50">Docs</span></a>
         </li>
@@ -31,7 +33,7 @@
           <a href="https://blog.bitlime.org/" target="blank_"><span class="text-zinc-300 hover:text-emerald-500">Blog</span></a>
         </li>
       </ul>
-      {#if windowWidth>600}
+      {#if windowWidth>800}
         <Tooltip content="Coming Soon" invertX>
           <Button
             theme="tertiary"
