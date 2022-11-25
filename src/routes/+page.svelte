@@ -43,10 +43,3 @@
 		</div>
 	</header>
 </main>
-
-<span class="absolute font-semibold text-emerald-500 opacity-30 text-end bottom-28 sm:bottom-28 md:bottom-36 lg:bottom-40 right-8 sm:right-14 md:right-24 lg:right-32" style="font-size: {windowWidth>1200?'100':(windowWidth<400?'24':windowWidth*0.08)}px; width: 100%;">
-	COMING EARLY 2023
-</span>
-
-
-	
