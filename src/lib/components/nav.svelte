@@ -3,42 +3,50 @@
 	import Tooltip from "./general/tooltip.svelte";
 
 	let windowWidth = 0;
+
+  const LINKS: { label: string; route: string; enabled: boolean; show: boolean }[] = [
+    { label: "Learn", route: "/learn", enabled: true, show: true },
+    { label: "Lime Token", route: "/lime-token", enabled: true, show: true },
+    { label: "Community", route: "/community", enabled: true, show: true },
+    { label: "Blog", route: "/blog", enabled: true, show: true },
+  ];
 </script>
 
 <svelte:window bind:innerWidth={windowWidth}/>
 
-<nav class="flex justify-between items-center bg-transparent px-5 py-4">
-    <div class="flex justify-start items-center">
+<nav class="flex justify-center bg-transparent px-5 py-4 border-b w-full">
+  <div class="flex justify-between items-center w-full" style="max-width: 1400px;">
+    <div class="flex justify-start items-center w-1/3">
         <a href="/" class="flex justify-start items-center btn btn-ghost normal-case text-lg">
-            <img src="/assets/bl-logos/logo-white.png" alt="Bitlime logo" class="h-7 w-7 mr-1"/>
+            <div class="mr-2">
+              <img src="/assets/bl-logos/logo-bold.png" alt="Bitlime logo" class="h-8 w-8"/>
+            </div>
             {#if windowWidth>800}
-              <div class="font-normal text-xl">BitLime</div>
+              <div class="font-bold text-2xl">bitlime</div>
             {/if}
         </a>
-        <span class="border-l pl-3 ml-3 border-zinc-600 font-medium text-zinc-600 hover:text-emerald-600 cursor-default">
+        <span class="border-l pl-3 ml-3 border-zinc-20 font-medium text-zinc-300 hover:text-black cursor-default">
           COMING EARLY 2023
         </span>
     </div>
-    <div class="flex justify-end items-center gap-5">
-      <ul class="flex justify-end items-center gap-5">
+    <div class="flex justify-center items-center w-1/3">
+      <ul class="flex justify-center items-center">
         {#if windowWidth>600}
-        <li>
-          <a href="/" disabled class="cursor-default"><span class="text-zinc-300 opacity-50">Docs</span></a>
-        </li>
-        <li>
-          <a href="/" disabled class="cursor-default"><span class="text-zinc-300 opacity-50">Community</span></a>
-        </li>
+          {#each LINKS as link}
+            <li class="py-1 px-3 hover:bg-zinc-200 rounded-lg{link.show?'':'sr-only'}">
+              <a href={link.route} disabled={!link.enabled} class="cursor-default"><span class="font-semibold">{link.label}</span></a>
+            </li>
+          {/each}
         {/if}
-        <li>
-          <a href="https://blog.bitlime.org/" target="blank_"><span class="text-zinc-300 hover:text-emerald-500">Blog</span></a>
-        </li>
       </ul>
+    </div>
+    <div class="w-1/3 flex justify-end items-center">
       {#if windowWidth>800}
         <Tooltip content="Coming Soon" invertX>
           <Button
-            theme="tertiary"
-            label='Enter App'
-            additionalClassList="cursor-default"
+            theme="primary"
+            label='Get Started'
+            additionalClassList="cursor-default font-bold text-white"
             >
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3 h-3">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
@@ -47,4 +55,5 @@
         </Tooltip>
       {/if}
     </div>
+  </div>
 </nav>
