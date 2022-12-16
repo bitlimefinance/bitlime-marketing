@@ -8,7 +8,7 @@
 	let navHeight = 68;
 </script>
 
-<div id="global-container" class="min-h-screen min-w-full bg-black">
+<div id="global-container" class="min-h-screen w-full bg-zinc-50">
 	{#if $showLoading}
 		<FullScreenContainer zIndex='1000' noBg>
 			<div class="flex flex-col space-y-4 p-0">
@@ -19,19 +19,10 @@
 			</div>
 		</FullScreenContainer>
 	{/if}
-	<div bind:clientHeight={navHeight} style="margin-bottom: -{navHeight}px; z-index: 10">
+	<div bind:clientHeight={navHeight} class="w-full flex justify-center" style="margin-bottom: -{navHeight}px; z-index: 10">
 		<Nav/>
 	</div>
 	<div class="w-full flex justify-center min-h-screen" id="content" style="padding-top: {navHeight}px;">
 		<slot />
 	</div>
 </div>
-
-<style>
-	#content {
-		background-image: url('/assets/dark-green-blur-abstract.webp');
-		background-repeat: no-repeat;
-		background-size: cover;
-		background-position: center;
-	}
-</style>
