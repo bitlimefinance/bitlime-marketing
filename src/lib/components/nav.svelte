@@ -2,19 +2,21 @@
 	import Button from "./general/button.svelte";
 	import Tooltip from "./general/tooltip.svelte";
 
+  export let element: HTMLElement;
+
 	let windowWidth = 0;
 
-  const LINKS: { label: string; route: string; enabled: boolean; show: boolean }[] = [
-    { label: "Learn", route: "/learn", enabled: true, show: true },
-    { label: "Lime Token", route: "/lime-token", enabled: true, show: true },
-    { label: "Community", route: "/community", enabled: true, show: true },
-    { label: "Blog", route: "/blog", enabled: true, show: true },
+  const LINKS: { label: string; route: string; external: boolean; enabled: boolean; show: boolean }[] = [
+    { label: "Learn", route: "/", external: false, enabled: false, show: true },
+    { label: "Lime Token", route: "/", external: false, enabled: false, show: true },
+    { label: "Community", route: "/", external: false, enabled: false, show: true },
+    { label: "Blog", route: "https://blog.bitlime.org/", external: true, enabled: true, show: true },
   ];
 </script>
 
 <svelte:window bind:innerWidth={windowWidth}/>
 
-<nav class="flex justify-center bg-transparent px-5 py-4 border-b w-full">
+<nav bind:this={element} class="flex justify-center bg-transparent px-5 py-4 w-full">
   <div class="flex justify-between items-center w-full" style="max-width: 1400px;">
     <div class="flex justify-start items-center w-1/3">
         <a href="/" class="flex justify-start items-center btn btn-ghost normal-case text-lg">
@@ -25,16 +27,13 @@
               <div class="font-bold text-2xl">bitlime</div>
             {/if}
         </a>
-        <span class="border-l pl-3 ml-3 border-zinc-20 font-medium text-zinc-300 hover:text-black cursor-default">
-          COMING EARLY 2023
-        </span>
     </div>
     <div class="flex justify-center items-center w-1/3">
-      <ul class="flex justify-center items-center">
+      <ul class="flex justify-center items-center pt-1">
         {#if windowWidth>600}
           {#each LINKS as link}
-            <li class="py-1 px-3 hover:bg-zinc-200 rounded-lg{link.show?'':'sr-only'}">
-              <a href={link.route} disabled={!link.enabled} class="cursor-default"><span class="font-semibold">{link.label}</span></a>
+            <li class="py-1 px-3 min-w-fit hover:bg-zinc-800 rounded-lg {link.enabled?'cursor-pointer':''} {link.show?'':'sr-only'}">
+              <a href={link.route} target={link.external?'_blank':''} rel={link.external?'noreferrer':''} disabled={!link.enabled} class={link.enabled?'cursor-pointer':'cursor-default'}><span>{link.label}</span></a>
             </li>
           {/each}
         {/if}
