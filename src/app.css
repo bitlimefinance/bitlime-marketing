@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* global styles */
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+.dark{
+    background-color: rgb(20, 20, 22); /* zinc-900 = rgb(24 24 27)*/
+}
+.dark *:not(svg):not(path):not(span):not(button){
+    color: #fff;
+    border-color: rgb(39 39 42);
+}
