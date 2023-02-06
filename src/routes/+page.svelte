@@ -21,7 +21,6 @@
 					</span>
 				</h1>
 				
-				<img src="/assets/eth-lady.svg" class="w-80 max-w-2xl mx-auto" alt="" />
 				<h2 class="w-full max-w-lg mx-auto text-center mt-5 opacity-90 text-xl sm:text-xl md:text-2xl lg:text-3xl">
 					Trade, earn and store crypto easly and securely, on Bitlime.
 				</h2>
