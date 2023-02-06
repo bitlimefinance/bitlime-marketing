@@ -21,16 +21,13 @@
 					</span>
 				</h1>
 				
-				<h2 class="w-full max-w-lg mx-auto text-center mt-10 opacity-90 text-xl sm:text-xl md:text-2xl lg:text-3xl">
+				<img src="/assets/eth-lady.svg" class="w-80 max-w-2xl mx-auto" alt="" />
+				<h2 class="w-full max-w-lg mx-auto text-center mt-5 opacity-90 text-xl sm:text-xl md:text-2xl lg:text-3xl">
 					Trade, earn and store crypto easly and securely, on Bitlime.
 				</h2>
-				<div class="w-full flex justify-center">
-					<div class="text-center w-fit my-10 text-xl border-zinc-700 dark:text-zinc-700 dark:hover:text-green-500 cursor-default">
-						COMING EARLY 2023
-					</div>
-				</div>
 
-				<div class="flex justify-center gap-3 w-full hidden">
+
+				<div class="flex justify-center gap-3 w-full my-5">
 					<Tooltip content="Coming Soon">
 						<Button
 							theme="primary"

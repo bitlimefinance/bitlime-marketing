@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import Nav from '$lib/components/nav.svelte';
-	import { mainHeight_, showLoading } from '$lib/stores/ui-theming';
+	import { dark, mainHeight_, showLoading } from '$lib/stores/ui-theming';
 	import FullScreenContainer from '$lib/components/general/fullScreenContainer.svelte';
 	import Spinner from '$lib/components/general/spinner.svelte';
 	import Footer from '$lib/components/footer.svelte';
@@ -16,7 +16,7 @@
 	});
 </script>
 
-<div id="global-container" class="min-h-screen w-full bg-transparent">
+<div id="global-container" class="min-h-screen w-full bg-transparent {$dark?"dark":""}">
 	{#if $showLoading}
 		<FullScreenContainer zIndex='1000' noBg>
 			<div class="flex flex-col space-y-4 p-0">
