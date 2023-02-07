@@ -32,7 +32,7 @@
       <ul class="flex justify-center items-center pt-1">
         {#if windowWidth>600}
           {#each LINKS as link}
-            <li class="py-1 px-3 min-w-fit hover:bg-zinc-800 rounded-lg {link.enabled?'cursor-pointer':''} {link.show?'':'sr-only'}">
+            <li class="py-1 px-3 min-w-fit hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-lg {link.enabled?'cursor-pointer':''} {link.show?'':'sr-only'}">
               <a href={link.route} target={link.external?'_blank':''} rel={link.external?'noreferrer':''} disabled={!link.enabled} class={link.enabled?'cursor-pointer':'cursor-default'}><span>{link.label}</span></a>
             </li>
           {/each}
