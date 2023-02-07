@@ -3,6 +3,7 @@
 	import Tooltip from "$lib/components/general/tooltip.svelte";
 
 	let windowWidth = 0;
+	let headerHeight = 0;
 </script>
 
 <svelte:head>
@@ -13,7 +14,7 @@
 
 <main class="w-full" style="max-width: 1200px;">
 	<header class="flex flex-col w-full px-4">
-		<section class="flex justify-center">
+		<section class="flex justify-center relative z-10" bind:clientHeight={headerHeight}>
 			<div class="w-fit">
 				<h1 class="w-full text-center font-bold mt-16 text-5xl sm:text-7xl lg:text-8xl">
 					<span>
@@ -43,14 +44,20 @@
 						<Button
 							theme="tertiary"
 							label='Affiliate Program'
-							additionalClassList="cursor-default bg-gray-50"
+							additionalClassList="cursor-default bg-gray-50/[0]"
 						/>
 					</Tooltip>
 				</div>
 			</div>
 		</section>
+		<div style="margin-top: -{headerHeight/1.5}px;" class="relative -z-10 border-y">
+			<div class="opacity-40">
+				<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+				<lottie-player src="https://assets9.lottiefiles.com/packages/lf20_476npssk.json"  background="transparent"  speed="0.1"  style="width: 100%; height: 100%;" mode="bounce" loop  autoplay></lottie-player>
+			</div>
+		</div>
 	</header>
-	<section class="hidden lg:block w-fit mx-auto border-t pt-10 px-3">
+	<section class="hidden lg:block w-fit mx-auto pt-10 px-3">
 		<div class="grid grid-cols-3 space-x-5 mb-1">
 			<h3 class="text-2xl font-semibold text-center max-w-sm flex justify-center items-center">As Easy As a Pie</h3>
 			<h3 class="text-2xl font-semibold text-center max-w-sm flex justify-center items-center">Convinient & Fair</h3>
